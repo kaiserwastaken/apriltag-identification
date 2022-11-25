@@ -55,4 +55,4 @@ while True:
 
     cv2.imshow("Apriltags Output", image)
 cap.release()
-cv.destroyAllWindows()
+cv2.destroyAllWindows()
