@@ -4,8 +4,8 @@ import apriltag, cv2
 #Camera Options
 cameraoptions = {
     "videoid": 0,
-    "height": 720,
-    "width": 1280,
+    "height": 240,
+    "width": 320,
 }
 
 

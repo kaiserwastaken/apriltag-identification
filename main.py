@@ -21,6 +21,7 @@ def main():
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, cameraoptions["width"])
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, cameraoptions["height"])
     detector = apriltag.Detector(detection_options)
+    cv2.setUseOptimized(True) #Change for legacy cpus
 
     scan = True
     ids = [] # Holds all of the detected tags' IDs
@@ -80,7 +81,7 @@ def main():
             closest_center, closest_id = centers[np.argmin(distances)], ids[np.argmin(distances)]
             centers = []
             ids = []
-        elif len(scan_results) == 0:
+        elif len(scan_results) == 0: #If no tags are detected:
             closest_center, closest_id = (0, 0), 0
         cv2.imshow("Apriltags Output", image)
 
