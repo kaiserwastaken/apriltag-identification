@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
-import apriltag, cv2, numpy as np
-import time
+import apriltag, cv2, numpy as np, time
 from datetime import datetime
 
 #Local Files
