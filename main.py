@@ -5,13 +5,14 @@ from datetime import datetime
 
 #Local Files
 from config import detection_options, cameraoptions
-###################################################
 
+"""
+Made by Kaiser for @Cartesian Robotics #8561.
+Check config.py for configuration.
+Contact Kaiser#8888 for troubleshooting.
+v0.3
+"""
 
-def log(message, level="[INFO]"):
-    now = datetime.now()
-    formatted_time = now.strftime("%H:%M:%S, %d/%m/%Y")
-    print(f"{level}: {message}  |{formatted_time}")
 
 def main():
 
@@ -20,7 +21,7 @@ def main():
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, cameraoptions["width"])
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, cameraoptions["height"])
     detector = apriltag.Detector(detection_options)
-    cv2.setUseOptimized(True) #Change for legacy cpus
+    cv2.setUseOptimized(cameraoptions["optimizedcv2"])
 
     scan = True
     ids = [] # Holds all of the detected tags' IDs
@@ -86,6 +87,11 @@ def main():
 
     cap.release()
     cv2.destroyAllWindows()
+
+def log(message, level="[INFO]"):
+    now = datetime.now()
+    formatted_time = now.strftime("%H:%M:%S, %d/%m/%Y")
+    print(f"{level}: {message}  |{formatted_time}")
 
 if __name__ == "__main__":
     main()
