@@ -10,6 +10,7 @@ from config import detection_options, cameraoptions
 Made by Kaiser for @Cartesian Robotics #8561.
 Check config.py for configuration.
 Contact Kaiser#8888 for troubleshooting.
+**USE PYTHON 3.10.8**
 v0.3
 """
 
