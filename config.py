@@ -1,4 +1,4 @@
-import apriltag, cv2
+import apriltag, cv2, numpy as np
 
 
 """
@@ -19,6 +19,7 @@ cameraoptions = {
     "height": 240, #Try to keep width and height as small as possible, for performance
     "width": 320,
     "optimizedcv2": True, #Change to false if there are any problems
+    "debug_text": True,
 }
 
 
