@@ -1,8 +1,3 @@
-
-# Apriltag Identification
-
-Get Apriltags' data using python.
-
 # Dependencies
 Install using: `pip install -r requirements.txt`
 
