@@ -15,8 +15,8 @@ while scan:
         if key == 27: 
             scan = False
         img = cv2.cvtColor(np.float32(img), cv2.COLOR_RGB2GRAY)
-        ret,thresh1 = cv2.threshold(img,120,255,cv2.THRESH_BINARY)
-        ret,thresh2 = cv2.threshold(img,120,255,cv2.THRESH_BINARY_INV)
+        ret,thresh1 = cv2.threshold(img,100,255,cv2.THRESH_BINARY)
+        ret,thresh2 = cv2.threshold(img,100,255,cv2.THRESH_BINARY_INV)
 
 
 
