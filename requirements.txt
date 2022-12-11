@@ -1,3 +1,4 @@
 apriltag==0.0.16
-numpy==1.23.4
+numpy==1.23.5
 opencv_python==4.6.0.66
+vidstab==1.7.4
