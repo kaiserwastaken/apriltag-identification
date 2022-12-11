@@ -29,8 +29,8 @@ detection_options = apriltag.DetectorOptions(families='tag16h5',
                                  nthreads=4,
                                  quad_decimate=1.0,
                                  quad_blur=1.25, # Detection distance/speed tradeoff
-                                 refine_edges=False,
-                                 refine_decode=False,
+                                 refine_edges=True,
+                                 refine_decode=True,
                                  refine_pose=True, #Keep as true
                                  debug=False,
                                  quad_contours=True)

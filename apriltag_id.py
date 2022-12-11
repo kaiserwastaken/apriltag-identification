@@ -7,11 +7,10 @@ from datetime import datetime
 from config import detection_options, cameraoptions
 
 """
-Made by Kaiser for @Cartesian Robotics #8561.
 Check config.py for configuration.
 Contact Kaiser#8888 for troubleshooting.
 **USE PYTHON 3.10.8**
-v0.3
+v0.3P
 """
 
 
@@ -42,10 +41,14 @@ def main():
             scan = False
 
         (image_h, image_w) = image.shape[:2] #Gets height and width of camera image
-        screen_center = np.array((image_w//2, image_h//2)) #Cam Center
-        img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #Converts to black and white
+        screen_center = np.array((image_w//2, image_h//2)) #Cam Center 
+        img = cv2.cvtColor(np.float32(image), cv2.COLOR_RGB2GRAY)
+        ret, img_1 = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+        gb_img = cv2.cvtColor(img_1, cv2.COLOR_GRAY2RGB)
+        img = cv2.cvtColor(gb_img, cv2.COLOR_RGB2GRAY)
 
-        scan_results = detector.detect(img)
+        scan_results = detector.detect(img_1)
+
         if cameraoptions["debug_text"]:
             cv2.putText(image, str(f"Detected No: {len(scan_results)}"), (5, 20),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2, cv2.LINE_AA)
@@ -60,13 +63,13 @@ def main():
             if len(centers) < len(scan_results): #Append current tag's center to list 
                 centers.append((center_x, center_y))
                 ids.append(result.tag_id) 
-
+            
             #Gets sides from corner data
             side_b = (np.int16(corner_b[0]), np.int16(corner_b[1]))
             side_c = (np.int16(corner_c[0]), np.int16(corner_c[1]))
             side_d = (np.int16(corner_d[0]), np.int16(corner_d[1]))
             side_a = (np.int16(corner_a[0]), np.int16(corner_a[1]))
-
+            print()
             #Drawing operations
             cv2.circle(image, screen_center, 3, (0, 0, 0), -1) #Screen's center
             cv2.circle(image, (center_x, center_y), 2, (255,255,0), -1) #Crosshair
