@@ -6,7 +6,7 @@ Install using: `pip install -r requirements.txt` (make sure to run it as adminis
 
 #### Warning
 
-If you encounter an error about Cmake not being installed while installing the apriltags official library for windows, try the following commands (this is a problem exclusive to windows and has nothing to do with me):
+If you encounter an error about Cmake not being installed while installing the apriltags official library for windows, try the following commands (this is a problem exclusive to windows and has nothing to do with my repository):
 
     git clone https://github.com/zwn/apriltag.git
     cd apriltag
