@@ -1,5 +1,5 @@
 # Dependencies
-Install using: `pip install -r requirements.txt`
+Install using: `pip install -r requirements.txt` (make sure to run it as administrator / sudo to not encounter errors)
 
 
 
