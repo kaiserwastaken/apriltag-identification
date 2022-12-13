@@ -1,6 +1,7 @@
-# Dependencies
+# Requirements
 - Cmake (Required for apriltag libraries)
-# Libraries
+- Python 3.10.8.
+### Libraries
 Install using: `pip install -r requirements.txt` (make sure to run it as administrator / sudo to not encounter errors)
 
 
